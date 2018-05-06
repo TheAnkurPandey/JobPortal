@@ -1,0 +1,87 @@
+npm install
+node server.js
+
+//Models contains Student and Company
+//Routes contains api endpoints
+
+Full Postman Documentation of the above APIs:
+https://documenter.getpostman.com/view/2260784/restapi-for-placement-events/RW1boKct
+
+
+(GET)http://localhost:1000/students/list
+List all the students present in the database
+
+(POST)http://localhost:1000/students/add
+Insert the new student in the database
+
+(GET)http://localhost:1000/students/:student_id
+List the details of the given student
+
+(PUT)http://localhost:1000/students/:student_id
+Update the details of student
+
+(DELETE)http://localhost:1000/students/:student_id
+Delete the data of student
+
+(PUT)http://localhost:1000/students/register/:student_id
+Register the student for placement event for particular company
+
+(PUT)http://localhost:1000/students/unregister/:student_id
+Unregister the student for placement event for particular company
+
+
+(GET)http://localhost:1000/companies/list
+List all the companies registered for placement events
+
+(GET)http://localhost:1000/companies/:companyName
+List the details of company registered for placement events
+
+(POST)http://localhost:1000/companies/register
+Register the company for particular placement event
+
+(DELETE)http://localhost:1000/companies//unregister/:companyName
+Unregister the company for particular placement event
+
+{
+    _id: Number,
+    name: String,
+    department: String,
+    cgpa: Number,
+    interestedCompanies: {
+        type: [String],
+        required: false
+    }
+}
+
+{
+    _id: String
+}
+
+["InformationTechnology", "ComputerScience", "Electronics", "Mechanical"]
+
+App listening on port 1000
+::1 - - [30/Apr/2018:18:34:31 +0000] "POST /companies/register HTTP/1.1" 200 56 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:07:20 +0000] "GET /students/list HTTP/1.1" 200 1040 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:07:39 +0000] "POST /students/add HTTP/1.1" 200 47 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:07:44 +0000] "GET /students/7 HTTP/1.1" 200 105 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:07:52 +0000] "PUT /students/4 HTTP/1.1" 200 38 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:08:08 +0000] "DELETE /students/11 HTTP/1.1" 200 42 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:08:23 +0000] "PUT /students/register/1 HTTP/1.1" 200 58 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:08:29 +0000] "PUT /students/unregister/1 HTTP/1.1" 200 60 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:08:46 +0000] "GET /students/listing HTTP/1.1" 200 166 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:09:03 +0000] "POST /students/add HTTP/1.1" 200 122 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:09:09 +0000] "GET /students/77 HTTP/1.1" 200 42 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:09:17 +0000] "PUT /students/44 HTTP/1.1" 200 42 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:09:44 +0000] "DELETE /students/10 HTTP/1.1" 200 49 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:09:58 +0000] "PUT /students/register/100 HTTP/1.1" 200 43 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:10:04 +0000] "PUT /students/unregister/100 HTTP/1.1" 200 43 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:10:11 +0000] "GET /companies/list HTTP/1.1" 200 79 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:10:18 +0000] "GET /companies/google HTTP/1.1" 200 24 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:10:51 +0000] "POST /companies/register HTTP/1.1" 200 60 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:11:13 +0000] "DELETE /companies/unregister/PayPal HTTP/1.1" 200 46 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:11:29 +0000] "GET /companies/box HTTP/1.1" 200 4 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:14:14 +0000] "POST /companies/register HTTP/1.1" 200 80 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:14:21 +0000] "DELETE /companies/unregister/PayPal HTTP/1.1" 200 50 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:14:59 +0000] "POST /students/add HTTP/1.1" 200 199 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:15:31 +0000] "POST /students/add HTTP/1.1" 200 409 "-" "PostmanRuntime/7.1.1"
+::1 - - [30/Apr/2018:19:15:42 +0000] "DELETE /students/10 HTTP/1.1" 200 42 "-" "PostmanRuntime/7.1.1"
